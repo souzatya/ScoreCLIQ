@@ -121,7 +121,6 @@ def evaluate(test, model=None, tokenizer=None, device='cuda', batch_size=8, chec
     elif model is not None and tokenizer==None:
         # Load pre-trained BERT model and tokenizer
         tokenizer = BertTokenizer.from_pretrained(model_repo)
-        print(f"Model provided, loaded tokenizer from {model_repo}")
 
     # Evaluate the model on test set
     model.eval()
@@ -147,7 +146,7 @@ def evaluate(test, model=None, tokenizer=None, device='cuda', batch_size=8, chec
     test_mse = mean_squared_error(test_targets_list, test_preds)
     test_mae = mean_absolute_error(test_targets_list, test_preds)
 
-    print(f"MSE: {test_mse:.4f}")
-    print(f"MAE: {test_mae:.4f}")
+    # print(f"MSE: {test_mse:.4f}")
+    # print(f"MAE: {test_mae:.4f}")
 
     return test_texts, test_preds, test_targets_list, test_mse, test_mae    
