@@ -5,5 +5,6 @@
 /data
 /research_ckpts
 /.vscode
+/.git
 
 *.ipynb
