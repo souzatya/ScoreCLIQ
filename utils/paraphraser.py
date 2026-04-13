@@ -11,7 +11,8 @@ def get_rewards(df, reward_model=None, device='cuda', checkpoint='checkpoints/be
         row = df.iloc[[i]]
         if reward_model is not None:
             _, pred, target, _, _ = evaluate(row, model=reward_model, device=device, text_column=text_column, target_column=target_column)
-        _, pred, target, _, _ = evaluate(row, device=device, checkpoint=checkpoint, text_column=text_column, target_column=target_column)
+        else:
+            _, pred, target, _, _ = evaluate(row, device=device, checkpoint=checkpoint, text_column=text_column, target_column=target_column)
         reward = -((pred[0] - target[0])**2)  # Higher reward for better alignment with true difficulty
         rewards.append(reward)
     return rewards
