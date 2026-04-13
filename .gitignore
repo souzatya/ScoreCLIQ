@@ -1,0 +1,8 @@
+/checkpoints_old
+/checkpoints
+/bert-checkpoints
+/rloo-checkpoints
+/data
+/research_ckpts
+
+*.ipynb

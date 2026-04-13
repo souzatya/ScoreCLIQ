@@ -1,0 +1,41 @@
+device: cuda
+
+data:
+  val_size: 0.3
+  text_column: ItemStem
+  target_column: Difficulty
+  pred_column: PredDifficulty
+
+estimator:
+  batch_size: 8
+  epochs: 50
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  model_repo: bert-base-uncased
+  scheduler_warmup_steps: 0
+  est_output_dir: ./bert-checkpoints
+
+
+subset_selection:
+  t: 0.04
+
+rloo:
+  llm_model_repo: mistralai/Mistral-7B-Instruct-v0.3
+  output_dir: ./rloo-checkpoints
+  batch_size: 1
+  grad_accum_steps: 4
+  epochs: 1
+  learning_rate: 1e-6
+  logging_steps: 10
+  save_steps: 50
+  num_samples: 4
+
+finetuning:
+  lamda: 0.99
+  batch_size: 8
+  epochs: 50
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  model_repo: bert-base-uncased
+  scheduler_warmup_steps: 0
+  ft_output_dir: ./checkpoints
