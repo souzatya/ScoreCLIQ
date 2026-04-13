@@ -35,7 +35,13 @@ git clone https://github.com/souzatya/ScoreCLIQ.git
 cd ScoreCLIQ
 
 # Install dependencies
-pip install torch transformers pandas scikit-learn trl datasets pyyaml openpyxl
+pip install -r requirements.txt
+```
+
+### Quick Start
+
+```bash
+python main.py --config config/mistral_config.yaml
 ```
 
 ### Requirements
