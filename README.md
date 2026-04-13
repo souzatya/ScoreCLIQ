@@ -174,7 +174,7 @@ After training, high-error items are selected: $\tilde{\mathcal{D}} = \{(Q_i, D_
 ### Stage 2: LLM-Guided Refinement
 An LLM (Mistral-7B) is fine-tuned via REINFORCE to paraphrase high-error items. The reward signal comes from the frozen estimator:
 
-$$R(Q_i, Q_i^*) = -(f_\theta(Q_i^*) - D_i)^2$$
+$$R(Q_i, Q_i^\*) = -(f_\theta(Q_i^\*) - D_i)^2$$
 
 The LLM is prompted with: *"Original item: [Q]; Predicted difficulty: [value]; True difficulty: [value]; Rewrite the item to better align with the true difficulty."*
 
