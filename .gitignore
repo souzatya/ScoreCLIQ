@@ -4,5 +4,6 @@
 /rloo-checkpoints
 /data
 /research_ckpts
+/.vscode
 
 *.ipynb
