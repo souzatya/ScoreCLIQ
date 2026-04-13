@@ -14,6 +14,8 @@ def set_input_format(df):
                 pdf.loc[idx, 'ItemStem'] += "\n" + str(row[col])
     
     pdf['Difficulty'] = df['Difficulty'].astype(str)
+    
+    return pdf
 
 def train_val_split(train_df, val_size=0.3, seed=42):
     train, val = train_test_split(train_df, test_size=val_size, random_state=seed)

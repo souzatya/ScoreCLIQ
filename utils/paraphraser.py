@@ -2,7 +2,7 @@ import torch
 import pandas as pd
 from trl import RLOOTrainer
 from datasets import Dataset
-from estimator import evaluate
+from .estimator import evaluate
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
 def get_rewards(df, reward_model=None, device='cuda', checkpoint='checkpoints/bert_regressor_2_454e-05_mse_0_0601.pt', text_column='ItemStem', target_column='Difficulty'):

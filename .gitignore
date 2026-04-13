@@ -8,3 +8,5 @@
 /.git
 
 *.ipynb
+*.pyc
+__pycache__/
