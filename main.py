@@ -211,7 +211,7 @@ config = RLOOConfig(
     learning_rate=rloo_learning_rate,
     logging_steps=rloo_logging_steps,
     save_steps=rloo_save_steps,
-    num_samples=rloo_num_samples,
+    num_generations=rloo_num_samples,
 )
 
 llm_model, llm_tokenizer = reinforce(
