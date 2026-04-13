@@ -52,13 +52,12 @@ def reinforce(df, config, reward_model=None, device='cuda', model_repo='mistrala
         model=model,
         args=config,
         train_dataset=dataset,
-        tokenizer=tokenizer,
-        reward_fn=reward_fn,
+        reward_funcs=reward_fn,
     )
 
     trainer.train()
 
-    return trainer.model, trainer.tokenizer
+    return trainer.model, tokenizer
 
 def paraphrase(row, model=None, tokenizer=None, device='cuda', checkpoint='rloo-checkpoints/checkpoint-50', text_column='ItemStem', pred_column='PredDifficulty', target_column='Difficulty'):
     if model==None and tokenizer==None:
